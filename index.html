@@ -1,0 +1,175 @@
+    <!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>哆啦A梦</title>
+	<style>
+		canvas {
+			margin:20px auto;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="600"></canvas>
+
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		ctx.beginPath();
+		ctx.strokeStyle = "#000";
+		ctx.lineWidth = 3;
+		ctx.arc(200,180,170,Math.PI*0.7,Math.PI*0.3);
+		var head = ctx.createRadialGradient(260,35,8,200,200,185);
+		head.addColorStop(0,"#fff");
+		head.addColorStop(1,"#00ffff");
+		ctx.fillStyle = head;
+		ctx.fill();
+		ctx.stroke();
+
+		// 脸框
+		ctx.beginPath();
+		ctx.fillStyle = "#fff";
+		ctx.arc(200,210,140,Math.PI*0.72,Math.PI*0.28);
+		ctx.fill();
+		ctx.stroke();
+
+		// 眼睛
+		ctx.beginPath();
+		ctx.moveTo(130,80);
+		ctx.bezierCurveTo(130,20,200,20,200,80);
+		ctx.bezierCurveTo(200,140,130,140,130,80);
+		ctx.moveTo(200,80);
+		ctx.bezierCurveTo(200,20,270,20,270,80);
+		ctx.bezierCurveTo(270,140,200,145,200,80);
+		ctx.fill();
+		ctx.stroke();
+
+		// 眼珠
+		ctx.beginPath();
+		ctx.moveTo(160,73);
+		ctx.quadraticCurveTo(180,63,195,87);
+		ctx.quadraticCurveTo(163,78,152,98);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.fillStyle = "#655353";
+		ctx.moveTo(206,85);
+		ctx.bezierCurveTo(206,55,233,55,235,85);
+		ctx.bezierCurveTo(233,115,206,115,206,85);
+		ctx.fill();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.fillStyle = "#fff";
+		ctx.arc(218,91,8,0,Math.PI*2);
+		ctx.fill();
+		ctx.stroke();
+
+		// 鼻子
+		ctx.beginPath();
+		ctx.arc(200,140,25,0,2*Math.PI);
+		var nose = ctx.createRadialGradient(213,135,4,200,135,30);
+		nose.addColorStop(0,"#fff");
+		nose.addColorStop(1,"#fe0000");
+		ctx.fillStyle=nose;
+    	ctx.fill();
+		ctx.stroke();
+
+		//三须
+		ctx.beginPath();
+		ctx.moveTo(80,110);
+		ctx.lineTo(160,165);
+		ctx.moveTo(65,185);
+		ctx.lineTo(160,185);
+		ctx.moveTo(80,245);
+		ctx.lineTo(160,205);
+
+		ctx.moveTo(240,205);
+		ctx.lineTo(320,245);
+		ctx.moveTo(240,185);
+		ctx.lineTo(335,185);
+		ctx.moveTo(240,165);
+		ctx.lineTo(320,110);
+
+		ctx.moveTo(200,165);
+		ctx.lineTo(200,265);
+
+		ctx.moveTo(285,205);
+		ctx.bezierCurveTo(290,270,130,290,110,215);
+		ctx.stroke();
+
+		// 脖子
+		ctx.beginPath();
+		ctx.fillStyle = "#f50303";
+		ctx.moveTo(96,317);
+		ctx.lineTo(306,317);
+		ctx.quadraticCurveTo(316,322,306,327);
+		ctx.lineTo(96,327);
+		ctx.quadraticCurveTo(86,322,96,317);
+		ctx.fill();
+		ctx.stroke();
+
+		// 下身
+		ctx.beginPath();
+		ctx.fillStyle = "#00ffff";
+		ctx.moveTo(96,327); 
+		ctx.quadraticCurveTo(10,427,96,437);//左胳膊
+		ctx.quadraticCurveTo(86,497,106,527);//左身子
+		ctx.quadraticCurveTo(176,547,200,527);
+		ctx.quadraticCurveTo(226,547,300,527);
+		ctx.quadraticCurveTo(320,507,306,437);//右身子
+		ctx.quadraticCurveTo(390,427,306,327); //右胳膊
+		ctx.moveTo(100,367);
+		ctx.quadraticCurveTo(96,387,96,437);
+		ctx.moveTo(300,367);
+		ctx.quadraticCurveTo(306,387,306,437)
+		ctx.moveTo(200,507);
+		ctx.quadraticCurveTo(200,537,204,557);
+		ctx.fill();
+		ctx.stroke();
+
+		// 肚子
+		ctx.beginPath();
+		ctx.fillStyle = "#fff";
+		ctx.arc(200,374,80,1.8*Math.PI,1.2*Math.PI);
+		ctx.moveTo(145,384);
+		ctx.lineTo(255,384);
+		ctx.bezierCurveTo(255,464,145,464,145,384);
+		ctx.fill();
+		ctx.stroke();
+
+		//胸前铃铛
+		ctx.beginPath();
+		ctx.arc(200,349,22,0,2*Math.PI);
+		var neck = ctx.createRadialGradient(220,340,0,200,358,30);
+		neck.addColorStop(0,"#fff");
+		neck.addColorStop(1,"#F1EB55");
+		ctx.fillStyle = neck;
+		ctx.moveTo(178,340);
+		ctx.lineTo(222,340);
+		ctx.moveTo(177,346);
+		ctx.lineTo(224,346);
+
+		ctx.moveTo(200,362);
+		ctx.lineTo(200,372);
+		ctx.fill();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(200,357,4,0,2*Math.PI);
+		ctx.stroke();
+
+		// 脚
+		ctx.beginPath();
+		ctx.moveTo(106,527); 
+		ctx.quadraticCurveTo(76,547,100,557);
+		ctx.quadraticCurveTo(154,567,204,557);
+		ctx.quadraticCurveTo(234,567,304,557);
+		ctx.quadraticCurveTo(336,547,300,527);
+		ctx.stroke();
+	</script>
+</body>
+</html>
